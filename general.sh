@@ -23,8 +23,9 @@ open-url() {
 
 # This file
 alias edit-profile="op ~/.bash_profile"
-alias edit-profile-repo="op ~/bash-profile/general.sh"
+alias edit-profile-general="op ~/bash-profile/general.sh"
 alias reload-profile="source ~/.bash_profile"
+alias pull-bash-profile="cd ~/bash-profile/ && git pull && reload-profile"
 
 # Git
 alias gut=git
