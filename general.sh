@@ -38,6 +38,7 @@ alias git-delete-old-branches='git fetch --prune && git branch -r | awk "{print 
 alias staging="git fetch && git branch -D staging && git checkout staging"
 alias master="git checkout master && git pull"
 alias st='open -a SourceTree $(repo-root)'
+alias amend-and-push="git add -A && git commit --amend --no-edit && git push --force"
 
 # Ruby
 alias be="bundle exec"
