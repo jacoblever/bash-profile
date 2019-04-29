@@ -70,10 +70,20 @@ stage() {
     if [ "$conflicts" -gt 0 ] ; then
       echo ":| There are merge conflicts! Please fix them before committing"
       while true; do
-        read -p "Fixed the conflcts and staged all the changes? " yn
+        read -p "Fixed the conflcts and staged all the changes? (type 'yes' or 'cancel' to reset and go back - WARNING: YOU WILL LOOSE ALL CHANGES) " yn
         case $yn in
-          [Yy]* ) break;;
-          * ) echo "Please answer yes.";;
+          [Yy]* )
+            break
+            ;;
+          cancel )
+            git reset --hard HEAD
+            git checkout $branch
+            echo "************ Cancelled: Nothing's been staged and we are back on $branch"
+            return
+            ;;
+          * )
+            echo "Please answer yes."
+            ;;
         esac
       done
     else
