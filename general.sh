@@ -55,7 +55,7 @@ alias staging="git fetch && git branch -D staging && git checkout staging"
 alias master="git checkout master && git pull"
 alias st='open -a SourceTree $(repo-root)'
 alias gui='open -a GitHub\ Desktop $(repo-root)'
-alias amend-and-push="git commit --amend --no-edit && git push --force"
+alias git-amend-and-push="git commit --amend --no-edit && git push --force"
 
 # Ruby
 alias be="bundle exec"
