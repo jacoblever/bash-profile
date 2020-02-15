@@ -26,12 +26,19 @@ alias edit-profile="vs ~/.bash_profile"
 alias edit-profile-general="vs ~/bash-profile/general.sh"
 alias cd-bash-profile="open -a Terminal ~/bash-profile/"
 alias reload-profile="source ~/.bash_profile"
-alias pull-bash-profile="cd ~/bash-profile/ && git pull && reload-profile"
-alias commit-profile-changes="gui ~/bash-profile/"
-push-profile-changes() {
+alias profile-changes-gui="gui ~/bash-profile/"
+profile-changes-push() {
     here=$(pwd)
     cd ~/bash-profile
     git push
+    cd $here
+}
+
+profile-changes-pull() {
+    here=$(pwd)
+    cd ~/bash-profile
+    git pull
+    reload-profile
     cd $here
 }
 
