@@ -27,6 +27,13 @@ alias edit-profile-general="vs ~/bash-profile/general.sh"
 alias cd-bash-profile="open -a Terminal ~/bash-profile/"
 alias reload-profile="source ~/.bash_profile"
 alias pull-bash-profile="cd ~/bash-profile/ && git pull && reload-profile"
+alias commit-profile-changes="gui ~/bash-profile/"
+push-profile-changes() {
+    here=$(pwd)
+    cd ~/bash-profile
+    git push
+    cd $here
+}
 
 # Git
 alias gut=git
