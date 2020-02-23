@@ -56,6 +56,7 @@ alias master="git checkout master && git pull"
 alias st='open -a SourceTree $(repo-root)'
 alias gui='open -a GitHub\ Desktop $(repo-root)'
 alias git-amend-and-push="git commit --amend --no-edit && git push --force"
+alias git-undo-last-commit="git reset HEAD^"
 
 # Ruby
 alias be="bundle exec"
