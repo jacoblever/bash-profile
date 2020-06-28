@@ -24,7 +24,7 @@ open-url() {
 # This file
 alias edit-profile="vs ~/.bash_profile"
 alias edit-profile-general="vs ~/bash-profile/general.sh"
-alias cd-bash-profile="open -a Terminal ~/bash-profile/"
+alias profile-changes-cd="open -a Terminal ~/bash-profile/"
 alias reload-profile="source ~/.bash_profile"
 alias profile-changes-gui="gui ~/bash-profile/"
 profile-changes-push() {
@@ -41,6 +41,10 @@ profile-changes-pull() {
     reload-profile
     cd $here
 }
+
+# Makefiles
+# Autocomplete makefile targets
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
 # Git
 alias gut=git
