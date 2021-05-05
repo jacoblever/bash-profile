@@ -1,3 +1,7 @@
+# PATH
+export PATH=$PATH:$(go env GOPATH)/bin
+
+
 # General
 op() {
   if [ ! -f $1 ]; then
