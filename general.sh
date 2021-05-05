@@ -17,6 +17,10 @@ json-parse() {
   pbpaste | python -mjson.tool
 }
 
+json-parse-copy() {
+  pbpaste | python -mjson.tool | pbcopy
+}
+
 open-url() {
   $(python3 ~/bash-profile/open_url.py $1)
 }
