@@ -71,9 +71,9 @@ alias git-amend-and-push="git commit --amend --no-edit && git push --force"
 alias git-undo-last-commit="git reset HEAD^"
 
 # Ruby
+eval "$(rbenv init -)"
 alias be="bundle exec"
 alias test="be rspec"
-alias mine="open -a RubyMine $(repo-root)"
 
 alias push-and-stage="git push && stage"
 stage() {
