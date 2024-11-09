@@ -107,9 +107,12 @@ make-branch() {
 }
 
 # Ruby
-eval "$(rbenv init -)"
-alias be="bundle exec"
-alias test="be rspec"
+if [ "$(command -v rbenv)" != "" ]; 
+then
+  eval "$(rbenv init -)"
+  alias be="bundle exec"
+  alias test="be rspec"
+fi
 
 #JetBrains
 alias idea='open -na "IntelliJ IDEA.app" --args "."'
