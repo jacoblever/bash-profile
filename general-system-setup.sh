@@ -1,10 +1,14 @@
+# run "git status" which will trigger an install of command line tools
+
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# run "git status" which will trigger an install of command line tools
+# Configure terminal to "Use Option key as Meta" in Terminal settings
 
 # Setup Git ssh key and add to github 
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
+# Install Docker
 # Install VS code
 # Install InteliJ apps
 # Install GitHub Desktop
