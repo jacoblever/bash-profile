@@ -1,6 +1,3 @@
-# PATH
-export PATH=$PATH:$(go env GOPATH)/bin
-
 
 # General
 op() {
@@ -17,12 +14,16 @@ vs() {
   open -a "Visual Studio Code" $1
 }
 
+json-format() {
+  python3 -mjson.tool
+}
+
 json-parse() {
-  pbpaste | python -mjson.tool
+  pbpaste | python3 -mjson.tool
 }
 
 json-parse-copy() {
-  pbpaste | python -mjson.tool | pbcopy
+  pbpaste | python3 -mjson.tool | pbcopy
 }
 
 open-url() {
@@ -39,6 +40,10 @@ edit-profile() {
     vs ~/.zshrc
     return
   fi
+  if [ -f ~/.zprofile ]; then
+    vs ~/.zprofile
+    return
+  fi
   echo "No profile file found!"
 }
 alias edit-profile-general="vs ~/bash-profile/general.sh"
@@ -46,13 +51,13 @@ alias profile-changes-cd="open -a Terminal ~/bash-profile/"
 reload-profile() {
   if [ -f ~/.bash_profile ]; then
     source ~/.bash_profile
-    return
   fi
   if [ -f ~/.zshrc ]; then
     source ~/.zshrc
-    return
   fi
-  echo "No profile file found!"
+  if [ -f ~/.zprofile ]; then
+    source ~/.zprofile
+  fi
 }
 alias profile-changes-gui="gui ~/bash-profile/"
 profile-changes-push() {
@@ -90,6 +95,7 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gl='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 alias repo-root="git rev-parse --show-toplevel"
+alias gpo='git pull origin'
 alias git-delete-old-branches='git fetch --prune && git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -d'
 alias staging="git fetch && git branch -D staging && git checkout staging"
 alias master="git checkout master && git pull"

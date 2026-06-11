@@ -1,6 +1,10 @@
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# run "git status" which will trigger an install of command line tools
+
+# Setup Git ssh key and add to github 
+
 # Install VS code
 # Install InteliJ apps
 # Install GitHub Desktop

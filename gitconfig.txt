@@ -1,0 +1,20 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = Jacob Lever
+	email = jacoblever@users.noreply.github.com
+[url "git@github.com:deliveroo"]
+	insteadOf = https://github.com/deliveroo
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[maintenance]
+	repo = /Users/jacoblever/doordash/pedregal
+	repo = /Users/jacoblever/doordash/web-next
+[trace2]
+	eventTarget = /Users/jacoblever/.devbox/git-trace2.jsonl
+	eventBrief = true
